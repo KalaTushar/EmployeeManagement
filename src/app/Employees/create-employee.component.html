@@ -1,0 +1,32 @@
+<form>
+    <div class="form-group">
+      <label for = "name">Employee Name</label>
+      <input type="text" [(ngModel)]="employee.employeeName" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label>Employee Type</label>
+        <select required [(ngModel)]="employee.employeeType" [ngModelOptions]="{standalone: true}" class="form-control" id="emptype" placeholder="Enter Type">
+        <option *ngFor="let pow of emptype" [value]="pow">{{pow}}</option>
+    </select>
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        <select [(ngModel)]="employee.gender" [ngModelOptions]="{standalone: true}" class="form-control" id="gender" placeholder="Enter Gender">
+            <option *ngFor="let pow of gendertype" [value]="pow">{{pow}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Division</label>
+        <input type="text" [(ngModel)]="employee.division" [ngModelOptions]="{standalone: true}" class="form-control" id="division" placeholder="Enter Name">
+        
+    </div>
+    <div class="form-group">
+      <label>Skills</label>
+      <input type="text" [(ngModel)]="employee.skills" [ngModelOptions]="{standalone: true}" class="form-control" id="skills" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label>Role</label>
+        <input type="text" [(ngModel)]="employee.role" [ngModelOptions]="{standalone: true}" class="form-control" id="role" placeholder="Enter Name">
+    </div>
+    <button type="submit" class="btn btn-primary mt-4" routerLinkActive='active' routerLink='/welcome' (click)="employeeregister();" >Save</button>
+</form>

@@ -1,0 +1,45 @@
+<div class='card'>
+    <div class='card-header' style="font-family: serif; text-align:center">
+        List Of Employees
+    </div>
+    <div class='card-body'>
+        <div class='row' style="margin-bottom: 2.5rem">
+            <div class='cool-md-2' style="text-align: end">
+              <label for="filter">Filter by: </label>
+              <input type="text" id="filter" [(ngModel)]='listFilter'/>
+            </div>
+            <div>
+            <button class='btn btn-primary' style="margin-right: 0.8rem" (click)="show()">
+                Create
+            </button>
+            </div>
+        </div>
+        <div class='table-responsive'>
+            <table class="tale" style="width:100%">
+                <thead>
+                    <tr>
+                        <th style="width:13%">Employee ID </th>
+                        <th style="width:15%">Employee Name </th>
+                        <th style="width:13%">Gender </th>
+                        <th style="width:15%">Employee Type </th>
+                        <th style="width:10%">Role </th>
+                        <th style="width:10%">Skills </th>
+                        <th style="width:10%">Division </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of filteredEmployees">
+                        <td>{{employee.employeeId}}</td>
+                        <td><a class='nav-link' routerLinkActive='active' routerLink='/employees/{{employee.employeeId}}'>{{employee.employeeName}}</a></td>
+                        <td>{{employee.gender}}</td>
+                        <td>{{employee.employeeType}}</td>
+                        <td>{{employee.role}}</td>
+                        <td>{{employee.skills}}</td>
+                        <td>{{employee.division}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>
+    <pm-create-employee *ngIf='showForm'></pm-create-employee>
+</div>

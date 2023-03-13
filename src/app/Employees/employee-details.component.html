@@ -1,0 +1,45 @@
+<div class='card'>
+    <div class='card-header' style="font-family: serif; text-align:center">
+        {{pageTitle}}
+    </div>
+    <div class='card-body'
+       *ngIf='employeedetail'>
+    
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4' style="margin-bottom: 0.2rem;">Name:</div>
+          <div class='col-md-8'>{{employeedetail.employeeName}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4' style="margin-bottom: 0.2rem;">Employee Type:</div>
+          <div class='col-md-8'>{{employeedetail.employeeType}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4' style="margin-bottom: 0.2rem;">Division:</div>
+          <div class='col-md-8'>{{employeedetail.division}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4' style="margin-bottom: 0.2rem;">Skills:</div>
+          <div class='col-md-8'>{{employeedetail.skills}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4' style="margin-bottom: 0.2rem;">Gender:</div>
+          <div class='col-md-8'>{{employeedetail.gender}}</div>
+        </div>
+        <div class='row'>
+            <div class='col-md-4' style="margin-bottom: 0.2rem;">Role:</div>
+            <div class='col-md-8'>{{employeedetail.role}}</div>
+        </div>
+        <div class='row'>
+            <div style="margin-bottom: 2rem; margin-top: 2rem;">
+                <button class='btn btn-primary' style="margin-right: 0.8rem">
+                    Edit
+                </button>
+                <button class='btn btn-primary' style="margin-right: 0.8rem">
+                    Delete
+                </button>
+            </div>
+    </div>
+    
+  </div>
+</div>
