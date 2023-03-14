@@ -4,7 +4,7 @@ import { Subscription } from "rxjs";
 import { IEmployee } from "./Employee";
 import { EmployeeService } from "./employeeService";
 @Component({
-  selector: 'employee-list',
+  selector: 'pm-employee-list',
   templateUrl: './EmployeeList.html',
   styleUrls: ['./EmployeeList.css'],
   providers: [EmployeeService]
@@ -41,6 +41,13 @@ export class EmployeeComponent {
       employee.employeeName.toLowerCase().includes(value));
   }
   ngOnInit(): void{
+    this.loadEmp();
+    this.empService.updateemplist.subscribe(()=>{
+      this.loadEmp();
+      this.show();
+    })
+  }
+  loadEmp(){
     this.sub = this.empService.getEmployee().subscribe({
       next: employee => {
         this.employees = employee;

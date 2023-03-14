@@ -1,12 +1,13 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { IEmployee } from './Employee';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, tap, throwError, BehaviorSubject } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
 export class EmployeeService{
     private employeeUrl ='http://localhost:5000/api/employee'
+    updateemplist:EventEmitter<void>=new EventEmitter();
     constructor(private httpreq: HttpClient){
         
     }

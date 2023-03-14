@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { IEmployee } from './Employee';
+import { ICreateEmployee, IEmployee } from './Employee';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { EmployeeDetailsComponent } from './employee-details.component';
@@ -16,6 +16,17 @@ export class EmployeeDetailService{
             tap(data=>console.log('All',JSON.stringify(data))),
             catchError(this.handleError)
         );
+    }
+    updateEmployee(id: number, employee: ICreateEmployee){
+      return this.httpreq.put<ICreateEmployee>(`http://localhost:5000/api/employee/${id}`,employee).pipe(
+        tap(data=>console.log('Updated Succesfully',JSON.stringify(data))),
+            catchError(this.handleError)
+      );
+    }
+    deleteEmployee(id: number){
+      return this.httpreq.delete(`http://localhost:5000/api/employee/${id}`).pipe(
+            catchError(this.handleError)
+      );
     }
     private handleError(err: HttpErrorResponse): Observable<never> {
         let errorMessage = '';

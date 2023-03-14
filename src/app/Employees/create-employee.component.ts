@@ -28,9 +28,8 @@ export class CreateEmployeeComponent{
   this.emp.getEmployee();
   }
   employeeregister(){
-  this.create.createEmployee(this.employee).subscribe({
-      next: this.close,
-      error: err=> this.errorMessage = err,
+  this.create.createEmployee(this.employee).subscribe(()=>{
+      this.emp.updateemplist.next();
     });
   }
 }

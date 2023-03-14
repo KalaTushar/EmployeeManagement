@@ -28,5 +28,5 @@
         <label>Role</label>
         <input type="text" [(ngModel)]="employee.role" [ngModelOptions]="{standalone: true}" class="form-control" id="role" placeholder="Enter Name">
     </div>
-    <button type="submit" class="btn btn-primary mt-4" routerLinkActive='active' routerLink='/welcome' (click)="employeeregister();" >Save</button>
+     <button type="submit" class="btn btn-primary mt-4" (click)="employeeregister();">Save</button>
 </form>

@@ -5,9 +5,6 @@ import { EmployeeComponent } from './EmployeeList';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CreateEmployeeComponent } from './create-employee.component';
-
-
-
 @NgModule({
   declarations: [
     EmployeeComponent,
