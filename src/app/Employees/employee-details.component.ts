@@ -11,7 +11,6 @@ import { EmployeeService } from './employeeService';
 export class EmployeeDetailsComponent implements OnInit {
   errorMessage: string = '';
   employeedetail! : IEmployee;
-  detail! : IEmployee;
   constructor(private route: ActivatedRoute, private empService: EmployeeDetailService,private emp: EmployeeService) {
     
    }
@@ -46,7 +45,7 @@ export class EmployeeDetailsComponent implements OnInit {
     });
   }
   employeeupdate(){
-    this.empService.updateEmployee(this.idd,this.detail).subscribe(()=>{
+    this.empService.updateEmployee(this.idd,this.employeedetail).subscribe(()=>{
           this.show();
       });
     }
